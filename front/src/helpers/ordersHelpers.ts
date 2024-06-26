@@ -7,7 +7,8 @@ export async function createOrder(products: number[], token: string) {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
-                Authorization: token,
+                Authorization: token,         
+                "ngrok-skip-browser-warning": "true",
             },
             body: JSON.stringify({
                 products

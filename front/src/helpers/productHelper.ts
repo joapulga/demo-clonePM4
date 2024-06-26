@@ -6,7 +6,10 @@ export async function getProducts () {
     try {
         const res = await fetch(`${apiUrl}/products`, {
             method: "GET",
-            next: {revalidate: 3600}
+            next: {revalidate: 3600},
+            headers: {
+                "ngrok-skip-browser-warning": "true"
+            }
         })
 
         const products: IProduct[] = await res.json()
